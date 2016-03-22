@@ -336,5 +336,5 @@ app.get('/user/:userId/groups/', function (req, res) {
 });
 
 
-app.listen(3000);
-console.log('Express started on port %d', 3000);
+app.listen(80);
+console.log('Express started on port %d', 80);
