@@ -1,0 +1,16 @@
+{
+  "name": "ROBLOX-group-autoranker",
+  "version": "1.0.0",
+  "description": "Helps auto-rank groups on ROBLOX",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Quenty",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.69.0",
+    "express": "^4.13.4",
+    "object-assign": "^4.0.1"
+  }
+}
