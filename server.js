@@ -1,5 +1,4 @@
 var objectAssign = require('object-assign');
-var Promise = require("node-promise").defer;
 var express = require('express');
 var request = require('request').defaults({jar: true});
 var fs = require("fs");
