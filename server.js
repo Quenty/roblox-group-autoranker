@@ -86,7 +86,7 @@ var botMixin = {
             return;
         }
         
-        if (!role || !isInt(role.ID) ) {
+        if (!role || !isInt(role.Id) ) {
             callback(new Error("Invalid role"), false);
             return;
         }
@@ -100,7 +100,7 @@ var botMixin = {
                 request({
                     url: 'http://www.roblox.com/groups/api/change-member-rank'
                             + '?groupId='      + group.id
-                            + '&newRoleSetId=' + role.ID
+                            + '&newRoleSetId=' + role.Id
                             + '&targetUserId=' + user.id,
                     method: 'POST',
                     headers: {
@@ -159,17 +159,13 @@ function User(id) {
 
 // Authenticates to ROBLOX
 User.authenticate = function(username, password, callback) {
-    request({
-        url: 'https://api.roblox.com/login/v1',
-        qs: {
-            "username":username,
-            "password":password
-        },
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }, function (err, res, body) {
+  request.post({
+    url: 'https://api.roblox.com/v2/login',
+    formData: {
+      "username":username,
+      "password":password
+    }
+  }, function (err, res, body) {
         if (err) {
             callback(err, false);
         } else if (res.statusCode != 200) {
