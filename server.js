@@ -86,7 +86,7 @@ var botMixin = {
             return;
         }
         
-        if (!role || !isInt(role.ID) ) {
+        if (!role || !isInt(role.Id) ) {
             callback(new Error("Invalid role"), false);
             return;
         }
@@ -100,7 +100,7 @@ var botMixin = {
                 request({
                     url: 'http://www.roblox.com/groups/api/change-member-rank'
                             + '?groupId='      + group.id
-                            + '&newRoleSetId=' + role.ID
+                            + '&newRoleSetId=' + role.Id
                             + '&targetUserId=' + user.id,
                     method: 'POST',
                     headers: {
