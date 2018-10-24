@@ -2,7 +2,7 @@
 This node bot helps auto-rank users in a group, providing a server that can do so.
 
 # Authentication
-Put your authentication details in a .json file named `Auth.json`. It should look like this:
+Put your authentication details in a .json file named `auth.json`. It should look like this:
 ```json
 {
     "username": "Shedletsky",
