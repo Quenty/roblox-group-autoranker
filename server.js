@@ -162,8 +162,8 @@ User.authenticate = function(username, password, callback) {
   request.post({
     url: 'https://api.roblox.com/v2/login',
     formData: {
-      "username":username,
-      "password":password
+      "username": username,
+      "password": password
     }
   }, function(err, res, body) {
         if (err) {
