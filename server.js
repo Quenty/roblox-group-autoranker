@@ -277,7 +277,7 @@ app.get('/group/:groupId/rank/:roleRankId', function(req, res) {
     res.json(req.roleRank);
 });
 
-// Returns specific data on the user for that group, including rank if they're in the group. 
+// Returns specific data on the user for that group, including rank if they're in the group.
 app.get('/group/:groupId/user/:userId/', function(req, res) {
     req.User.inGroup(req.Group.id, function(err, isInGroup) {
         if (err) {
