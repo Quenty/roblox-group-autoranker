@@ -165,7 +165,7 @@ User.authenticate = function(username, password, callback) {
       "username":username,
       "password":password
     }
-  }, function (err, res, body) {
+  }, function(err, res, body) {
         if (err) {
             callback(err, false);
         } else if (res.statusCode != 200) {
@@ -257,12 +257,12 @@ app.param('userId', function(req, res, next, userIdString) {
 // Routes
 var BOT_DATA = JSON.parse(fs.readFileSync("auth.json"));
 
-app.get('/group/:groupId', function (req, res) {
+app.get('/group/:groupId', function(req, res) {
     res.json(req.Group);
 });
 
 // Returns the roleset for the group
-app.get('/group/:groupId/roleset', function (req, res) {
+app.get('/group/:groupId/roleset', function(req, res) {
     req.Group.getRoleSet(function(err, roleset) {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -273,12 +273,12 @@ app.get('/group/:groupId/roleset', function (req, res) {
 });
 
 // Returns specific data on the role rank
-app.get('/group/:groupId/rank/:roleRankId', function (req, res) {
+app.get('/group/:groupId/rank/:roleRankId', function(req, res) {
     res.json(req.roleRank);
 });
 
 // Returns specific data on the user for that group, including rank if they're in the group. 
-app.get('/group/:groupId/user/:userId/', function (req, res) {
+app.get('/group/:groupId/user/:userId/', function(req, res) {
     req.User.inGroup(req.Group.id, function(err, isInGroup) {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -292,7 +292,7 @@ app.get('/group/:groupId/user/:userId/', function (req, res) {
 });
 
 // Changes a users role
-app.get('/group/:groupId/setRank/:userId/:roleRankId', function (req, res) {
+app.get('/group/:groupId/setRank/:userId/:roleRankId', function(req, res) {
     req.User.inGroup(req.Group.id, function(err, isInGroup) {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -320,7 +320,7 @@ app.get('/group/:groupId/setRank/:userId/:roleRankId', function (req, res) {
 
 
 // Gets a user's group
-app.get('/user/:userId/groups/', function (req, res) {
+app.get('/user/:userId/groups/', function(req, res) {
     req.User.getGroups(function(err, groups) {
         if (err) {
             res.status(500).json({ error: err.message });
