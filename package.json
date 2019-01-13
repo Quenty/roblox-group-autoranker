@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Quenty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Quenty/roblox-group-autoranker.git"
+  },
   "license": "ISC",
   "dependencies": {
     "request": "^2.69.0",
