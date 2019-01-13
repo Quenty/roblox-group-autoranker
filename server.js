@@ -169,7 +169,7 @@ User.authenticate = function(username, password, callback) {
         if (err) {
             callback(err, false);
         } else if (res.statusCode != 200) {
-            callback(new Error('Could not login. Response \'' + res.statusCode + '\' from ROBLOX'), false);
+            callback(new Error('Could not login. Response \'' + res.statusCode + '\' from ROBLOX. Error: ' + res.body), false);
         } else {
             var data = JSON.parse(body);
             var user = new User(data.userId);
