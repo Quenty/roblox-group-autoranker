@@ -10,6 +10,8 @@ Put your authentication details in a .json file named `auth.json`. It should loo
 }
 ```
 
+**NOTE:** Currently this bot does not function if it hits a captcha.
+
 # API
 ## Getting a user's groups
 `GET` request to `/user/{userId}/groups`
